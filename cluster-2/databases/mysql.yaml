@@ -11,3 +11,5 @@ metadata:
 spec:
   type: database
   owner: guest
+  dependsOn:
+    - "resource:cluster-2"
