@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: cluster-1-mysql-dev
+  name: cluster-2-mysql-dev
   title: MySQL 8.0
   description: MySQL Database 8.0 for Cluster 2 Test
   tags:

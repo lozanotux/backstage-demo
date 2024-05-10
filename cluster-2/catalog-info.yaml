@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: clusters-2
+  name: clusters-2-resources
 spec:
   targets:
     - ./cluster-2.yaml

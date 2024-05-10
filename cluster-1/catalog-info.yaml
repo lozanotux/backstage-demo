@@ -1,8 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: clusters-1
+  name: clusters-1-resources
 spec:
   targets:
     - ./cluster-1.yaml
     - ./databases/postgresql.yaml
+    - ./databases/oracle.yaml
