@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: clusters-metadata
+spec:
+  targets:
+    - ./cluster-1/catalog-info.yaml
+    - ./cluster-2/catalog-info.yaml

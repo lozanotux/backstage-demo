@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: clusters-2
+spec:
+  targets:
+    - ./cluster-2.yaml
+    - ./databases/mysql.yaml

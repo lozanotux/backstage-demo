@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cluster-2
+  title: Kubernetes Cluster 2
+  description: Cluster for Test environment
+  tags:
+    - k8s
+    - kubernetes
+    - test
+spec:
+  type: cluster
+  owner: user:guest

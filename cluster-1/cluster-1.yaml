@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cluster-1
+  title: Kubernetes Cluster 1
+  description: Cluster for Development environment
+  tags:
+    - k8s
+    - kubernetes
+    - dev
+spec:
+  type: cluster
+  owner: user:guest

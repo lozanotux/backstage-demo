@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cluster-1-postgresql-dev
+  title: PostgreSQL 14.7
+  description: PostgreSQL Database 14.7 for Cluster 1 Dev
+  tags:
+    - postgresql
+    - database
+    - dev
+spec:
+  type: database
+  owner: guest
