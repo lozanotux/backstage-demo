@@ -1,0 +1,52 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: poc-1-properties
+  title: Proof of Concept - Properties
+  description: Test different types of properties
+  tags:
+    - properties
+    - poc
+spec:
+  owner: guest
+  type: service
+  parameters:
+    - title: Environment
+      properties:
+        cluster:
+          title: Cluster
+          description: "Select the target cluster"
+          type: string
+          ui:field: EntityPicker
+          ui:options:
+            defaultKind: Resource
+            catalogFilter:
+              - spec.type: cluster
+          # enum:
+          #   - cluster-1
+          #   - cluster-2
+          # enumNames:
+          #   - Cluster Desarrollo
+          #   - Cluster Test
+    - title: Database
+      properties:
+        database:
+          title: Database
+          description: "Select the target database"
+          type: string
+          ui:field: EntityPicker
+          ui:options:
+            defaultKind: Resource
+            catalogFilter:
+              - spec.type: database
+                # spec.dependsOn: "resource:${{ parameters.cluster }}"
+                # https://github.com/backstage/backstage/issues/20533
+                spec.dependsOn: "resource:cluster-1"
+  steps:
+    - id: log-messages
+      name: Log Messages
+      action: debug:log
+      input:
+        # Templating Engine is Nunjucks, for instance:
+        # message: Using database ${{ parameters.database.name | capitalize }} of cluster ${{ parameters.cluster | replace("resource:default/", "") | title}}
+        message: Using database ${{ parameters.database }} of cluster ${{ parameters.cluster }}
