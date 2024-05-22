@@ -11,6 +11,13 @@ spec:
   owner: guest
   type: service
   parameters:
+    - title: Test
+      properties:
+        testvar:
+          title: Test
+          description: Test Variable
+          type: string
+          ui:field: SelectOwnerPicker
     - title: Environment
       properties:
         cluster:
@@ -48,5 +55,6 @@ spec:
       action: debug:log
       input:
         # Templating Engine is Nunjucks, for instance:
-        # message: Using database ${{ parameters.database.name | capitalize }} of cluster ${{ parameters.cluster | replace("resource:default/", "") | title}}
-        message: Using database ${{ parameters.database }} of cluster ${{ parameters.cluster }}
+        # message: Using database ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace("...", "_") }} of cluster ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace( [...].*$ , "" ) }}
+        message: Using database ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace("...", "_") }} of cluster ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace( r/[...].*$/ , "" ) }}
+        # message: Using database ${{ parameters.database | replace( r/^.*[...]/ , "" ) }} of cluster ${{ parameters.cluster | replace( r/^.*[\/]/ , "" ) }}

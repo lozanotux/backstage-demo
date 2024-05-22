@@ -10,7 +10,7 @@ metadata:
     - dev
 spec:
   type: database
-  owner: guest
+  owner: [guest, admin]
   dependsOn:
     - "resource:cluster-1"
   profile:
