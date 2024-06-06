@@ -56,5 +56,6 @@ spec:
       input:
         # Templating Engine is Nunjucks, for instance:
         # message: Using database ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace("...", "_") }} of cluster ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace( [...].*$ , "" ) }}
-        message: Using database ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace("...", "_") }} of cluster ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace( r/[...].*$/ , "" ) }}
+        # message: Using database ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace("...", "_") }} of cluster ${{ parameters.database | replace( r/^.*[\/]/ , "" ) | replace( r/[...].*$/ , "" ) }}
         # message: Using database ${{ parameters.database | replace( r/^.*[...]/ , "" ) }} of cluster ${{ parameters.cluster | replace( r/^.*[\/]/ , "" ) }}
+        message: "You are using template: ${{ templateName }}"
