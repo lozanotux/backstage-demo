@@ -6,3 +6,4 @@ spec:
   targets:
     - ./cluster-1/catalog-info.yaml
     - ./cluster-2/catalog-info.yaml
+    - ./templates/poc-1-properties/catalog-info.yaml
