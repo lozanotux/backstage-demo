@@ -4,6 +4,8 @@ metadata:
   name: cluster-1...oracle-dev
   title: Oracle Database 12c
   description: Oracle Database 12c for Cluster 1 Dev
+  annotations:
+    liquibase.org/job: "true"
   tags:
     - oracle
     - database
