@@ -11,13 +11,6 @@ spec:
   owner: guest
   type: service
   parameters:
-    - title: Test
-      properties:
-        testvar:
-          title: Test
-          description: Test Variable
-          type: string
-          ui:field: SelectOwnerPicker
     - title: Environment
       properties:
         cluster:
@@ -48,7 +41,7 @@ spec:
               - spec.type: database
                 # spec.dependsOn: "resource:${{ parameters.cluster }}"
                 # https://github.com/backstage/backstage/issues/20533
-                spec.dependsOn: "resource:cluster-1"
+                metadata.annotations.liquibase.org/job: "true"
   steps:
     - id: log-messages
       name: Log Messages
