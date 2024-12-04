@@ -6,5 +6,6 @@ spec:
   targets:
     - ./cluster-1.yaml
     - ./carts-service.yaml
+    - ./ppo-yards-test.yaml
     - ./databases/postgresql.yaml
     - ./databases/oracle.yaml
