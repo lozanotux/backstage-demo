@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    backstage.io/kubernetes-id: ppo-yards-test
+  name: ppo-yards-test
+  tags:
+    - openapi
+    - api
+spec:
+  type: service
+  lifecycle: production
+  owner: default
+  system: dqa
