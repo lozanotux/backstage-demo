@@ -3,6 +3,7 @@ kind: Component
 metadata:
   namespace: default
   annotations:
+    backstage.io/kubernetes-label-selector: app=ppo-yards-test
     backstage.io/kubernetes-id: ppo-yards-test
   name: ppo-yards-test
   tags:
