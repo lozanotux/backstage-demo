@@ -11,13 +11,21 @@ Demo to test Backstage
 * [Git](https://github.com/git-guides/install-git)
 * curl or wget
 
+> **NOTE:** if you have macOS, and have some error related to `node-gyp` or `memory`. Probably you need to reinstall `XCode Command Line Tools`. For this, run next commands:
+> ```sh
+> sudo rm -rf /Library/Developer/CommandLineTools
+> xcode-select --install
+> ```
+
 If you want to create a standalone Backstage locally on your machine, run next commands:
 
 1. Create backstage Node.js app:
 
     ```bash
-    npx @backstage/create-app
+    npx @backstage/create-app@latest
     ```
+
+    > **NOTE:** this commands requires you to input your instance name, for instance `my-instance` (`backstage` by default).
 
 2. Configure Github Access Token:
 
@@ -32,7 +40,7 @@ If you want to create a standalone Backstage locally on your machine, run next c
     ```
 
     ```bash
-    yarn dev
+    yarn start
     ```
     >**NOTE:** if you are using Node.js 20, maybe you have consider tu set environment variable `NODE_OPTIONS=--no-node-snapshot` before yarn command.
 
@@ -61,3 +69,21 @@ To see more information, please visit:
 - **YAML Objects Specification:** [https://backstage.io/docs/features/software-catalog/descriptor-format](https://backstage.io/docs/features/software-catalog/descriptor-format)
 
 - **Nunjucks Templating:** [https://mozilla.github.io/nunjucks/templating.html](https://mozilla.github.io/nunjucks/templating.html)
+
+## ChatBot AI plugin
+
+To Test this plugin, you need to have access to a chatbot frontend like `ollama-webui` or something like that.
+
+![Backchat plugin overview](./media/backchat-overview.png)
+
+To run a chatbot in your local machine, you will need to install [ollama](https://ollama.com/download) and execute next two services prior to follow the plugin instructions:
+1. LLM locally:
+    ```sh
+    ollama run deepseek-r1:1.5b
+    ```
+2. Ollama webui:
+    ```sh
+    podman run --name webui -p 3100:8080 -e OLLAMA_ORIGINS="*" -e OLLAMA_HOST="0.0.0.0" ollamawebui/ollama-webui
+    ```
+
+Then follow [the plugin instructions]https://github.com/benwilcock/backstage-plugin-backchat/blob/main/README.md).
